@@ -59,7 +59,7 @@ class TodoList extends React.Component {
     );
 
     return (
-      <div>
+      <div key={listItem.key}>
         <InputField />
         <div className="list-group">
           {formattedData.map(listItem => {
@@ -68,7 +68,6 @@ class TodoList extends React.Component {
                 // When looping over elements in React, remember to add a unique
                 // "key" value. This is so React can optimise its updates and
                 // only update stuff that changes
-                key={listItem.key}
                 firebaseKey={listItem.key}
                 data={listItem.value}
               />
